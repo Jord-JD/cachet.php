@@ -1,11 +1,11 @@
 <?php
 
-namespace DivineOmega\CachetPHP\Factories;
+namespace JordJD\CachetPHP\Factories;
 
-use DivineOmega\CachetPHP\Objects\Component;
-use DivineOmega\CachetPHP\Objects\Incident;
-use DivineOmega\CachetPHP\Objects\Metric;
-use DivineOmega\CachetPHP\Objects\Subscriber;
+use JordJD\CachetPHP\Objects\Component;
+use JordJD\CachetPHP\Objects\Incident;
+use JordJD\CachetPHP\Objects\Metric;
+use JordJD\CachetPHP\Objects\Subscriber;
 
 abstract class CachetElementFactory
 {

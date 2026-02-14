@@ -2,7 +2,7 @@
 
 require_once 'vendor/autoload.php';
 
-use \DivineOmega\CachetPHP\Factories\CachetInstanceFactory;
+use \JordJD\CachetPHP\Factories\CachetInstanceFactory;
 
 $cachetInstance = CachetInstanceFactory::create('http://cachet.test/api/v1/', 'mm634LcVtLDHlsRWARm0');
 

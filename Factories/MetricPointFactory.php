@@ -1,8 +1,8 @@
 <?php
 
-namespace DivineOmega\CachetPHP\Factories;
+namespace JordJD\CachetPHP\Factories;
 
-use DivineOmega\CachetPHP\Objects\MetricPoint;
+use JordJD\CachetPHP\Objects\MetricPoint;
 
 abstract class MetricPointFactory
 {

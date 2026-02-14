@@ -1,8 +1,8 @@
 <?php
 
-namespace DivineOmega\CachetPHP\Objects;
+namespace JordJD\CachetPHP\Objects;
 
-use DivineOmega\CachetPHP\Factories\IncidentUpdateFactory;
+use JordJD\CachetPHP\Factories\IncidentUpdateFactory;
 
 class Incident
 {

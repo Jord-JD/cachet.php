@@ -1,6 +1,6 @@
 <?php
 
-namespace DivineOmega\CachetPHP\Objects;
+namespace JordJD\CachetPHP\Objects;
 
 class Subscriber
 {

@@ -21,7 +21,7 @@
   },
   "autoload": {
     "psr-4": {
-      "DivineOmega\\CachetPHP\\": "./"
+      "JordJD\\CachetPHP\\": "./"
     }
   },
   "replace": {
@@ -29,7 +29,8 @@
   },
   "extra": {
     "branch-alias": {
-      "dev-master": "1.0-dev"
+      "dev-master": "2.0-dev"
     }
-  }
+  },
+  "require-dev": {}
 }

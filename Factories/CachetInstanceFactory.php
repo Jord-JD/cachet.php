@@ -1,8 +1,8 @@
 <?php
 
-namespace DivineOmega\CachetPHP\Factories;
+namespace JordJD\CachetPHP\Factories;
 
-use DivineOmega\CachetPHP\Objects\CachetInstance;
+use JordJD\CachetPHP\Objects\CachetInstance;
 
 abstract class CachetInstanceFactory
 {

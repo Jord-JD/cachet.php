@@ -1,11 +1,11 @@
 <?php
 
-namespace DivineOmega\CachetPHP\Objects;
+namespace JordJD\CachetPHP\Objects;
 
-use DivineOmega\CachetPHP\Factories\ComponentFactory;
-use DivineOmega\CachetPHP\Factories\IncidentFactory;
-use DivineOmega\CachetPHP\Factories\MetricFactory;
-use DivineOmega\CachetPHP\Factories\SubscriberFactory;
+use JordJD\CachetPHP\Factories\ComponentFactory;
+use JordJD\CachetPHP\Factories\IncidentFactory;
+use JordJD\CachetPHP\Factories\MetricFactory;
+use JordJD\CachetPHP\Factories\SubscriberFactory;
 use GuzzleHttp\Client;
 
 class CachetInstance

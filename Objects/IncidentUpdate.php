@@ -1,9 +1,9 @@
 <?php
 
-namespace DivineOmega\CachetPHP\Objects;
+namespace JordJD\CachetPHP\Objects;
 
-use DivineOmega\CachetPHP\Factories\IncidentFactory;
-use DivineOmega\CachetPHP\Factories\MetricPointFactory;
+use JordJD\CachetPHP\Factories\IncidentFactory;
+use JordJD\CachetPHP\Factories\MetricPointFactory;
 
 class IncidentUpdate
 {

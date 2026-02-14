@@ -1,6 +1,6 @@
 <?php
 
-namespace DivineOmega\CachetPHP\Factories;
+namespace JordJD\CachetPHP\Factories;
 
 abstract class MetricFactory
 {
