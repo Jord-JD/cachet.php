@@ -25,7 +25,7 @@
     }
   },
   "replace": {
-    "jord-jd/cachetphp": "self.version"
+    "divineomega/cachetphp": "self.version"
   },
   "extra": {
     "branch-alias": {
