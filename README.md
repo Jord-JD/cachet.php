@@ -4,7 +4,7 @@ cachet.php is a PHP client library for the Cachet status page (https://cachethq.
 
 This library could be useful for displaying details from your Cachet status page in other systems, such as a monitoring dashboard, a client ticketing system or any other web applications.
 
-If you want to grab cachet.php with Composer, take a look on Packagist: https://packagist.org/packages/divineomega/cachetphp
+If you want to grab cachet.php with Composer, take a look on Packagist: https://packagist.org/packages/jord-jd/cachetphp
 
 # Quick Start
 
@@ -167,6 +167,6 @@ $incidents[0]->delete();
 
 # Contact
 
-If you've found a bug or a new feature, please [report it as a GitHub issue](https://github.com/DivineOmega/cachet.php/issues).
+If you've found a bug or a new feature, please [report it as a GitHub issue](https://github.com/Jord-JD/cachet.php/issues).
 
 For other queries, I'm available on Twitter ([Jordan Hall](https://twitter.com/divineomega)).
