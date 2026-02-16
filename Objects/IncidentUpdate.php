@@ -3,7 +3,6 @@
 namespace JordJD\CachetPHP\Objects;
 
 use JordJD\CachetPHP\Factories\IncidentFactory;
-use JordJD\CachetPHP\Factories\MetricPointFactory;
 
 class IncidentUpdate
 {
@@ -33,7 +32,7 @@ class IncidentUpdate
         $this->cachetInstance->guzzleClient->put('incidents/'.$this->incident_id.'/updates/'.$this->id, ['headers' => $this->cachetInstance->getAuthHeaders(),
             'query' => $queryParams, ]);
 
-        if ($this->component_status) {
+        if ($this->component_status !== null) {
             $incident = IncidentFactory::getById($this->cachetInstance, $this->incident_id);
             $incident->component_status = $this->component_status;
             $incident->save();

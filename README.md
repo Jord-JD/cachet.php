@@ -1,5 +1,8 @@
 # cachet.php
 
+[![Packagist Downloads](https://img.shields.io/packagist/dt/jord-jd/cachetphp?label=Packagist%20Downloads)](https://packagist.org/packages/jord-jd/cachetphp)
+[![Tests](https://github.com/Jord-JD/cachet.php/actions/workflows/tests.yml/badge.svg)](https://github.com/Jord-JD/cachet.php/actions/workflows/tests.yml)
+
 cachet.php is a PHP client library for the Cachet status page (https://cachethq.io/).
 
 This library could be useful for displaying details from your Cachet status page in other systems, such as a monitoring dashboard, a client ticketing system or any other web applications.
@@ -51,6 +54,8 @@ If you wish to sort your results, you can use the following syntax. This works f
 // Get components sorted by name ascending
 $components = $cachetInstance->getAllComponents('name', 'asc');
 ```
+
+`getAll*` methods automatically follow paginated responses from Cachet and return a single combined result set.
 
 ## Reading from Cachet element objects
 

@@ -53,10 +53,10 @@ class CachetInstance
             throw new \Exception('cachet.php: Bad response.');
         }
 
-        $data = json_decode($response->getBody());
+        $data = json_decode((string) $response->getBody());
 
-        if (!$data) {
-            throw new \Exception('cachet.php: Could not decode JSON from '.$url);
+        if ($data === null) {
+            throw new \Exception('cachet.php: Could not decode JSON response from ping endpoint.');
         }
 
         if (isset($data->data)) {

@@ -24,13 +24,23 @@
       "JordJD\\CachetPHP\\": "./"
     }
   },
+  "autoload-dev": {
+    "psr-4": {
+      "JordJD\\CachetPHP\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit"
+  },
   "replace": {
     "divineomega/cachetphp": "self.version"
   },
   "extra": {
     "branch-alias": {
-      "dev-master": "2.0-dev"
+      "dev-master": "2.1-dev"
     }
   },
-  "require-dev": {}
+  "require-dev": {
+    "phpunit/phpunit": "^9.6"
+  }
 }
