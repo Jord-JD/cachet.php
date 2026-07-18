@@ -12,12 +12,16 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        php-version:
-          - "7.4"
-          - "8.0"
-          - "8.1"
-          - "8.2"
-          - "8.3"
+        include:
+          - php-version: "5.5"
+            composer: "2.2"
+            tests: false
+          - php-version: "7.4"
+            composer: latest
+            tests: true
+          - php-version: "8.5"
+            composer: latest
+            tests: true
 
     steps:
       - name: Checkout
@@ -27,14 +31,24 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: ${{ matrix.php-version }}
-          tools: composer:v2
+          tools: composer:${{ matrix.composer }}
           coverage: none
 
       - name: Validate composer.json
-        run: composer validate --strict --no-check-lock
+        run: composer validate --strict
 
-      - name: Install dependencies
+      - name: Install runtime dependencies on the minimum PHP version
+        if: matrix.tests == false
+        run: composer update --no-dev --prefer-stable --no-interaction
+
+      - name: Lint runtime source on the minimum PHP version
+        if: matrix.tests == false
+        run: find Factories Objects -type f -name '*.php' -print0 | xargs -0 -n 1 php -l
+
+      - name: Install development dependencies
+        if: matrix.tests == true
         run: composer install --no-interaction --prefer-dist
 
       - name: Run test suite
+        if: matrix.tests == true
         run: composer test

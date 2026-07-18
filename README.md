@@ -5,6 +5,8 @@
 
 cachet.php is a PHP client library for the Cachet status page (https://cachethq.io/).
 
+It supports PHP 5.5 and later, Guzzle 6 and 7, and is tested on current PHP releases.
+
 This library could be useful for displaying details from your Cachet status page in other systems, such as a monitoring dashboard, a client ticketing system or any other web applications.
 
 If you want to grab cachet.php with Composer, take a look on Packagist: https://packagist.org/packages/jord-jd/cachetphp
@@ -25,6 +27,19 @@ use \JordJD\CachetPHP\Factories\CachetInstanceFactory;
 // The API token for the demo instance is 9yMHsdioQosnyVK4iCVR.
 $cachetInstance = CachetInstanceFactory::create('https://demo.cachethq.io/api/v1/', '9yMHsdioQosnyVK4iCVR');
 ```
+
+The base URL is normalized automatically, so the trailing slash is optional. You can also pass a custom Guzzle client as the third argument, or Guzzle client options as the fourth argument:
+
+```php
+$cachetInstance = CachetInstanceFactory::create(
+    'https://status.example/api/v1',
+    'api-token',
+    null,
+    ['timeout' => 10.0, 'connect_timeout' => 2.0]
+);
+```
+
+Client injection is useful when an application needs its own handler stack, proxy, retry middleware or test transport.
 
 ## Retrieving Cachet elements
 
