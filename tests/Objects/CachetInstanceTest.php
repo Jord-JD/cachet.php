@@ -19,6 +19,27 @@ class CachetInstanceTest extends TestCase
         CachetInstanceFactory::create(null, 'test-token');
     }
 
+    public function testConstructorNormalizesBaseUrlAndAcceptsClientOptions()
+    {
+        $cachetInstance = CachetInstanceFactory::create(
+            'https://status.example/api/v1',
+            'test-token',
+            null,
+            array('timeout' => 10.0)
+        );
+
+        $this->assertSame('https://status.example/api/v1/', (string) $cachetInstance->guzzleClient->getConfig('base_uri'));
+        $this->assertSame(10.0, $cachetInstance->guzzleClient->getConfig('timeout'));
+    }
+
+    public function testConstructorAcceptsAnInjectedClient()
+    {
+        $client = new \GuzzleHttp\Client(array('base_uri' => 'https://custom.example/'));
+        $cachetInstance = CachetInstanceFactory::create('https://status.example/api/v1/', 'test-token', $client);
+
+        $this->assertSame($client, $cachetInstance->guzzleClient);
+    }
+
     public function testPingReturnsPongDataAndIsWorkingReturnsTrue()
     {
         $cachetInstance = $this->makeCachetInstance([

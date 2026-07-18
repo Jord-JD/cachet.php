@@ -7,6 +7,7 @@ use JordJD\CachetPHP\Factories\IncidentFactory;
 use JordJD\CachetPHP\Factories\MetricFactory;
 use JordJD\CachetPHP\Factories\SubscriberFactory;
 use GuzzleHttp\Client;
+use GuzzleHttp\ClientInterface;
 
 class CachetInstance
 {
@@ -15,19 +16,26 @@ class CachetInstance
     private $baseUrl;
     private $apiToken;
 
-    public function __construct($baseUrl, $apiToken)
+    public function __construct($baseUrl, $apiToken, ClientInterface $client = null, array $clientOptions = array())
     {
         if (!$baseUrl) {
             throw new \Exception('You must specify the base URL for your Cachet instance.');
         }
 
-        $this->baseUrl = $baseUrl;
+        $this->baseUrl = rtrim($baseUrl, '/').'/';
         $this->apiToken = $apiToken;
 
-        $this->guzzleClient = new Client([
-            'base_uri' => $baseUrl,
-            'timeout'  => 3.0,
-        ]);
+        if ($client !== null) {
+            $this->guzzleClient = $client;
+            return;
+        }
+
+        $clientOptions['base_uri'] = $this->baseUrl;
+        if (!array_key_exists('timeout', $clientOptions)) {
+            $clientOptions['timeout'] = 3.0;
+        }
+
+        $this->guzzleClient = new Client($clientOptions);
     }
 
     public function getApiToken()
